@@ -9,12 +9,15 @@ class Program
         
         while (true)
         {
-            Console.WriteLine("2 - Read Tasks \n5 - Exit");
+            Console.WriteLine("1 - Create a new task \n2 - Read Tasks \n5 - Exit");
             Console.Write("Option: ");
             string option = Console.ReadLine();
             
             switch (option)
             {
+                case "1":
+                    Create(tasks);
+                    break;
                 case "2":
                     Read(tasks);
                     break;
@@ -29,11 +32,23 @@ class Program
         }
     }
 
+    static void Create(List<TasksObjects> tasks)
+    {
+        int newId = tasks.Count;
+        Console.Write("Write the task subject: ");
+        string newSubject = Console.ReadLine();
+        Console.Write("Write the task description: ");
+        string newDescription = Console.ReadLine();
+        
+        tasks.Add(new TasksObjects{id = newId, subject = newSubject, description = newDescription, status = "Not-Done"});
+        Console.WriteLine("Tasks created!");
+    }
+
     static void Read(List<TasksObjects> tasks)
     {
         foreach (var task in tasks)
         {
-            Console.WriteLine($"Name: {task.Name} \nAge: {task.Age}");
+            Console.WriteLine($"Id: {task.id} \nSubject: {task.subject} \nDescription: {task.description} \nStatus: {task.status} \n");
         }
     }
 }

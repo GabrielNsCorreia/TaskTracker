@@ -1,6 +1,8 @@
 namespace TaskTracker;
 public class TasksObjects
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    public int id { get; set; }
+    public string subject { get; set; }
+    public string description { get; set; }
+    public string status { get; set; }
 }

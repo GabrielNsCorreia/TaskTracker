@@ -1,14 +1,20 @@
 [
   {
-    "Name": "Bruno",
-    "Age": 42
+    "id": 0,
+    "subject": "Math",
+    "description": "Complex Numbers",
+    "status": "Not-Done"
   },
   {
-    "Name": "Horacio",
-    "Age": 76
+    "id": 1,
+    "subject": "Portuguese",
+    "description": "Neologismos",
+    "status": "Not-Done"
   },
   {
-    "Name": "Tomas",
-    "Age": 34
+    "id": 2,
+    "subject": "History",
+    "description": "Pr\u00E9-Hist\u00F3ria",
+    "status": "Not-Done"
   }
 ]

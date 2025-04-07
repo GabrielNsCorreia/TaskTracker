@@ -1,14 +1,8 @@
 [
   {
-    "Name": "Bruno",
-    "Age": 42
-  },
-  {
-    "Name": "Horacio",
-    "Age": 76
-  },
-  {
-    "Name": "Tomas",
-    "Age": 34
+    "id": 0,
+    "subject": "Math",
+    "description": "Complex Numbers",
+    "status": "Not-Done"
   }
 ]
