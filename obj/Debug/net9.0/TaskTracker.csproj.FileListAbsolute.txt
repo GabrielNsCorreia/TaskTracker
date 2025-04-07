@@ -13,3 +13,4 @@ C:\Users\Gabriel\RiderProjects\TaskTracker\obj\Debug\net9.0\refint\TaskTracker.d
 C:\Users\Gabriel\RiderProjects\TaskTracker\obj\Debug\net9.0\TaskTracker.pdb
 C:\Users\Gabriel\RiderProjects\TaskTracker\obj\Debug\net9.0\TaskTracker.genruntimeconfig.cache
 C:\Users\Gabriel\RiderProjects\TaskTracker\obj\Debug\net9.0\ref\TaskTracker.dll
+C:\Users\Gabriel\RiderProjects\TaskTracker\obj\Debug\net9.0\TaskTracker.sourcelink.json

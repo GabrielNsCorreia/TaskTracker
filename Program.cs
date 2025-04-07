@@ -1,12 +1,12 @@
 ﻿namespace TaskTracker;
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine("Hi");
-        TasksObjects a = TasksManager.LoadTasks();
-        Console.WriteLine(a.Task1);
-        a.Task1 = Console.ReadLine();
+        List<TasksObjects> a = TasksManager.LoadTasks();
+        Console.WriteLine(a[0].Name);
+        a[0].Name = Console.ReadLine();
         TasksManager.SaveTasks(a);
     }
 }
