@@ -60,12 +60,29 @@ class Program
 
     static void Update(List<TasksObjects> tasks)
     {
-        
+        Console.Write("Write the id of the task to update: ");
+        int idUpdate = int.Parse(Console.ReadLine());
+        int index = tasks.FindIndex(x => x.id == idUpdate);
+        if (index == -1)
+        {
+            Console.WriteLine("Task not found");
+            return;
+        }
+        Console.Write("Write the new subject: ");
+        string newSubject = Console.ReadLine();
+        tasks[index].subject = newSubject;
+        Console.Write("Write the new description: ");
+        string newDescription = Console.ReadLine();
+        tasks[index].description = newDescription;
+        Console.Write("Write the new status: ");
+        string newStatus = Console.ReadLine();
+        tasks[index].status = newStatus;
+        Console.WriteLine("Tasks updated!");
     }
 
     static void Delete(List<TasksObjects> tasks)
     {
-        Console.Write("Write the id of the task for deletion: ");
+        Console.Write("Write the id of the task to delete: ");
         int idDelete = int.Parse(Console.ReadLine());
         int index = tasks.FindIndex(x => x.id == idDelete);
         if (index == -1)
