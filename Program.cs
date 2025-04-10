@@ -9,7 +9,7 @@ class Program
         
         while (true)
         {
-            Console.WriteLine("1 - Create a new task \n2 - Read Tasks \n5 - Exit");
+            Console.WriteLine("1 - Create \n2 - Read \n3 - Update \n4 - Delete \n5 - Exit");
             Console.Write("Option: ");
             string option = Console.ReadLine();
             
@@ -20,6 +20,12 @@ class Program
                     break;
                 case "2":
                     Read(tasks);
+                    break;
+                case "3":
+                    Update(tasks);
+                    break;
+                case "4":
+                    Delete(tasks);
                     break;
                 case "5":
                     return;
@@ -50,5 +56,24 @@ class Program
         {
             Console.WriteLine($"Id: {task.id} \nSubject: {task.subject} \nDescription: {task.description} \nStatus: {task.status} \n");
         }
+    }
+
+    static void Update(List<TasksObjects> tasks)
+    {
+        
+    }
+
+    static void Delete(List<TasksObjects> tasks)
+    {
+        Console.Write("Write the id of the task for deletion: ");
+        int idDelete = int.Parse(Console.ReadLine());
+        int index = tasks.FindIndex(x => x.id == idDelete);
+        if (index == -1)
+        {
+            Console.WriteLine("Task not found!");
+            return;
+        }
+        tasks.RemoveAt(index);
+        Console.WriteLine("Tasks deleted!");
     }
 }
