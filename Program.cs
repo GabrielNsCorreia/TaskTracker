@@ -47,15 +47,39 @@ class Program
         Console.Write("Write the task description: ");
         string newDescription = Console.ReadLine();
         
-        tasks.Add(new TasksObjects{id = newId, subject = newSubject, description = newDescription, status = "Not-Done"});
+        tasks.Add(new TasksObjects{id = newId, subject = newSubject, description = newDescription, status = "To Do"});
         Console.WriteLine("Tasks created!");
     }
 
     static void Read(List<TasksObjects> tasks)
     {
+        Console.WriteLine("List:\n1 - All\n2 - Done \n3 - In-Progress \n4 - To Do");
+        Console.Write("Option: ");
+        string list = Console.ReadLine();
+        switch (list)
+        {
+            case "1":
+                list = "All";
+                break;
+            case "2":
+                list = "Done";
+                break;
+            case "3":
+                list = "In-Progress";
+                break;
+            case "4":
+                list = "To Do";
+                break;
+            default:
+                Console.WriteLine("Invalid option");   
+                break;
+        }
         foreach (var task in tasks)
         {
-            Console.WriteLine($"Id: {task.id} \nSubject: {task.subject} \nDescription: {task.description} \nStatus: {task.status} \n");
+            if (task.status == list || list == "All")
+            {
+                Console.WriteLine($"Id: {task.id} \nSubject: {task.subject} \nDescription: {task.description} \nStatus: {task.status} \n");
+            }
         }
     }
 
@@ -75,9 +99,24 @@ class Program
         Console.Write("Write the new description: ");
         string newDescription = Console.ReadLine();
         tasks[index].description = newDescription;
-        Console.Write("Write the new status: ");
+        Console.WriteLine("Choose new task status \n1 - Done \n2 - In-Progress \n3 - To Do");
+        Console.Write("Option: ");
         string newStatus = Console.ReadLine();
-        tasks[index].status = newStatus;
+        switch (newStatus)
+        {
+            case "1":
+                tasks[index].status = "Done";
+                break;
+            case "2":
+                tasks[index].status = "In-Progress";
+                break;
+            case "3":
+                tasks[index].status = "To Do";
+                break;
+            default:
+                Console.WriteLine("Invalid option");
+                break;
+        }
         Console.WriteLine("Tasks updated!");
     }
 
