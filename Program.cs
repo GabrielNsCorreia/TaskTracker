@@ -9,6 +9,7 @@ class Program
         
         while (true)
         {
+            Console.WriteLine("============================================================");
             Console.WriteLine("1 - Create \n2 - Read \n3 - Update \n4 - Delete \n5 - Exit");
             Console.Write("Option: ");
             string option = Console.ReadLine();
@@ -28,19 +29,19 @@ class Program
                     Delete(tasks);
                     break;
                 case "5":
+                    Console.WriteLine("Saving and exiting");
                     return;
                 default:
                     Console.WriteLine("Invalid option");
                     break;
             }
-            
             TasksManager.SaveTasks(tasks);
         }
     }
 
     static void Create(List<TasksObjects> tasks)
     {
-        int newId = tasks.Count;
+        string newId = $"TASK-{DateTime.Now:yyyyMMddHHmmss}-{Guid.NewGuid().ToString()[..8]}";
         Console.Write("Write the task subject: ");
         string newSubject = Console.ReadLine();
         Console.Write("Write the task description: ");
@@ -61,7 +62,7 @@ class Program
     static void Update(List<TasksObjects> tasks)
     {
         Console.Write("Write the id of the task to update: ");
-        int idUpdate = int.Parse(Console.ReadLine());
+        string idUpdate = Console.ReadLine();
         int index = tasks.FindIndex(x => x.id == idUpdate);
         if (index == -1)
         {
@@ -83,7 +84,7 @@ class Program
     static void Delete(List<TasksObjects> tasks)
     {
         Console.Write("Write the id of the task to delete: ");
-        int idDelete = int.Parse(Console.ReadLine());
+        string idDelete = Console.ReadLine();
         int index = tasks.FindIndex(x => x.id == idDelete);
         if (index == -1)
         {

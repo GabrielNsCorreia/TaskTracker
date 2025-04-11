@@ -11,7 +11,7 @@ public class TasksManager
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
-            tasks = JsonSerializer.Deserialize<List<TasksObjects>>(json);
+            tasks = JsonSerializer.Deserialize<List<TasksObjects>>(json) ?? new List<TasksObjects>();
         }
         return tasks;
     }
